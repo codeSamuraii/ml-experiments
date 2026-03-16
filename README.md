@@ -4,3 +4,4 @@
 - [`TransferLearning.ipynb`](TransferLearning.ipynb) - using transfer learning to improve generalisation ability.
 - [`ImageEnhancementCNN.ipynb`](ImageEnhancementCNN.ipynb) - using a CNN encoder-decoder to deblock and enhance JPEG images.
 - [`ImageColorisation.ipynb`](ImageColorisation.ipynb) - using a CNN to colorise grayscale images.
+- [`DimensionReductionVideo.ipynb`](DimensionReductionVideo.ipynb) - applying dimensionality reduction (PCA, t-SNE) to video frames and RGB channels.
