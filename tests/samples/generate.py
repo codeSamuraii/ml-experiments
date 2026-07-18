@@ -22,10 +22,12 @@ VIDEOS = [
 ]
 
 FPS = 60
-DURATION = 20
+DURATION = 5
 NUM_FRAMES = FPS * DURATION
 BG = (5, 5, 20)
 TEX_SIZE = 256
+CAMERA_DIST = 6.0       # perspective distance (larger = wider field of view)
+PROJECTION_SCALE = 0.25  # fraction of min(width, height); tuned to keep cube in frame
 
 # Cube geometry: 8 vertices
 VERTICES = [
@@ -143,9 +145,9 @@ def render_frame(t, width, height, textures):
     # Transform vertices
     xformed = [mat_vec(rot, v) for v in VERTICES]
 
-    # Perspective projection
-    dist = 4.0
-    scale = min(width, height) * 0.35
+    # Perspective projection (cube centered at origin, projected to frame center)
+    dist = CAMERA_DIST
+    scale = min(width, height) * PROJECTION_SCALE
     screen = []
     for x, y, z in xformed:
         f = dist / (dist - z)
